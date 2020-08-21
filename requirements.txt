@@ -1,0 +1,14 @@
+appdirs==1.4.4
+distlib==0.3.0
+filelock==3.0.12
+importlib-metadata==1.6.0
+mysqlclient==1.4.6
+numpy==1.16.4
+pbr==5.4.5
+six==1.14.0
+stevedore==1.32.0
+virtualenv==20.0.21
+virtualenv-clone==0.5.4
+virtualenvwrapper==4.8.4
+virtualenvwrapper-win==1.2.6
+zipp==3.1.0
