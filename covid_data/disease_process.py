@@ -2,13 +2,13 @@ import pandas as pd
 import datetime
 from covid_data.usa_state import name_to_state
 
-confirmed_cases = pd.read_excel('../res/confirmed_case.xlsx', sheet_name='Sheet1')
-death = pd.read_excel('../res/death.xlsx', sheet_name='Sheet1')
+confirmed_cases = pd.read_csv('../res/confirmed_case.csv')
+death = pd.read_csv('../res/death.csv')
 # state = confirmed_cases[confirmed_cases.state=='AK']
 # country = state[state.country == 'Anchorage']
 
 # print(country[confirmed_cases(2020,4,10)])
-
+pass
 
 
 def get_confirmed_cases(node_type,node_name,time):#获取某个节点的确诊人数 输入为节点类型，节点名称，查询时间
@@ -43,4 +43,4 @@ def get_death(node_type,node_name,time):#获取某个节点的确诊人数 输�
             return country[time].sum()
 
 
-# print(get_confirmed_cases(3, ['USA', 'Alabama', 'Chambers', 'Abanda'],datetime.datetime(2020, 4, 10)))
+print(get_confirmed_cases(1, ['USA', 'Alabama'],datetime.datetime(2020, 7, 20)))

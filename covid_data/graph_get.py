@@ -15,20 +15,20 @@ graph_df =pd.read_csv('../res/graph.csv')
 #     json_file.write(json_node_id)
 with open("./processed_data/node_to_id.csv", 'r', encoding='UTF-8') as f:
     node_to_id = json.load(f)
-node_from =graph_df['edge_from'].map(lambda x:node_to_id[x])
-node_to =graph_df['edge_to'].map(lambda x:node_to_id[x])
-edge_type = graph_df['edge_type'].apply(lambda x:int(x))
+# node_from =graph_df['edge_from'].map(lambda x:node_to_id[x])
+# node_to =graph_df['edge_to'].map(lambda x:node_to_id[x])
+# edge_type = graph_df['edge_type'].apply(lambda x:int(x))
 #图的节点类属性 [类型，确诊人数，新增人数，死亡人数，人口，人口密度，舆论认知]
                 #类型信息  0：USA  1:state 2country  3 city
 
 
 
-edge_pd = pd.DataFrame({"node_from":node_from,"node_to":node_to})
+# edge_pd = pd.DataFrame({"node_from":node_from,"node_to":node_to})
 # edge_pd.to_csv('./processed_data/edge_01.csv')
 
 
-def get_edge_index():
-    return [node_from,node_to]
+# def get_edge_index():
+#     return [node_from,node_to]
 
 
 def get_data_x(time):
@@ -55,14 +55,14 @@ def get_data_x(time):
 
 # print(get_data_x(datetime.datetime(2020, 4, 10)))
 # edge = get_edge_index()
-x_pd = pd.DataFrame(get_data_x(datetime.datetime(2020, 4, 10)))
+x_pd = pd.DataFrame(get_data_x(datetime.datetime(2020, 4, 25)))
 x_pd.to_csv("./processed_data/node_0410.csv")
 
-def get_edge_attr():
-
-    return ( [ [index, value]for index,value in enumerate(edge_type.array)])
-
-
-pass
+# def get_edge_attr():
+#
+#     return ( [ [index, value]for index,value in enumerate(edge_type.array)])
+#
+#
+# pass
 
 
